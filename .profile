@@ -41,5 +41,5 @@ alias py="python"
 ## Virtualenv aliases
 alias venv="virtualenv"
 alias venv-nsp="virtualenv --no-site-packages"
-alias act="bin/activate"
+alias act="source bin/activate"
 alias dact="deactivate"
