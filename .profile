@@ -14,7 +14,7 @@ function mutlireplace {
 }
 
 # Set prompt.
-PS1="\w \$(parse_git_branch)\$ "
+PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\! \[\e[1;37m\]➜\[\e[0m\] "
 
 # Git aliases
 alias gscl="git svn clone"
