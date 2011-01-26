@@ -13,6 +13,14 @@ function mutlireplace {
     find . -type f -exec sed -i '' 's/run_job/init_job/g' {} \;
 }
 
+# Make sure that the configs directory is at the latest version.
+function update-configs {
+    cd ~/Configs
+    git pull git@github.com:nrb/Configs.git
+    cd ~
+}
+
+
 # Set prompt.
 PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\! \[\e[1;37m\]➜\[\e[0m\] "
 
@@ -43,3 +51,6 @@ alias venv="virtualenv"
 alias venv-nsp="virtualenv --no-site-packages"
 alias act="source bin/activate"
 alias dact="deactivate"
+
+# Update to the latest version of the profiles.
+update-configs
