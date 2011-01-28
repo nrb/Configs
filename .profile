@@ -28,13 +28,14 @@ PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\! \[\e
 alias pushconfig="git push origin"
 
 # Git aliases
-alias gscl="git svn clone"
+alias gscl="git svn clone -s"
 alias gsdc="git svn dcommit"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias ga="git add"
 alias gst="git status"
 alias gd="git diff"
+alias gi="git svn init -s"
 
 # SSH Aliases
 alias cigroup="ssh nolan@cigroup.crc.nd.edu"
