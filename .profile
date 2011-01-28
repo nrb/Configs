@@ -13,7 +13,7 @@ function mutlireplace {
     find . -type f -exec sed -i '' 's/run_job/init_job/g' {} \;
 }
 
-# Make sure that the configs directory is at the latest version.
+# Updates the configs directory to the latest version.
 function update-configs {
     cd ~/Configs
     git pull git@github.com:nrb/Configs.git
@@ -52,5 +52,8 @@ alias venv-nsp="virtualenv --no-site-packages"
 alias act="source bin/activate"
 alias dact="deactivate"
 
-# Update to the latest version of the profiles.
-update-configs
+# Set command line input to vi mode.
+set -o vi
+
+# Set the editor to vim (so we can be cross platform).
+EDITOR="vim"
