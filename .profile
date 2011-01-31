@@ -59,5 +59,8 @@ alias dact="deactivate"
 # Set command line input to vi mode.
 set -o vi
 
+# Set control-l to clear the screen.
+bind -m vi-insert "\C-l":clear-screen
+
 # Set the editor to vim (so we can be cross platform).
 EDITOR="vim"
