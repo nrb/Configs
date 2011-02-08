@@ -56,6 +56,12 @@ alias venv-nsp="virtualenv --no-site-packages"
 alias act="source bin/activate"
 alias dact="deactivate"
 
+# Make sure to install the virtualenvwrapper script.
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Set up the virtualenvwrapper project root.
+WORKON_HOME=~/dev
+
 # Set command line input to vi mode.
 set -o vi
 
