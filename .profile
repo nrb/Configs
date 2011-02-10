@@ -16,8 +16,7 @@ function mutlireplace {
 # Updates the configs directory to the latest version.
 function update-configs {
     cd ~/Configs
-    git pull git@github.com:nrb/Configs.git
-    cd ~
+    git pull origin
 }
 
 
