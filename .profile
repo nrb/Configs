@@ -56,7 +56,7 @@ alias act="source bin/activate"
 alias dact="deactivate"
 
 alias pinprojlist="pinax-admin clone_project -l"
-alias pinclone="pinax-admin clone_prject"
+alias pinclone="pinax-admin clone_project"
 
 # Make sure to install the virtualenvwrapper script.
 source /usr/local/bin/virtualenvwrapper.sh
