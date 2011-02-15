@@ -16,8 +16,7 @@ function mutlireplace {
 # Updates the configs directory to the latest version.
 function update-configs {
     cd ~/Configs
-    git pull git@github.com:nrb/Configs.git
-    cd ~
+    git pull origin
 }
 
 
@@ -55,6 +54,9 @@ alias venv="virtualenv"
 alias venv-nsp="virtualenv --no-site-packages"
 alias act="source bin/activate"
 alias dact="deactivate"
+
+alias pinprojlist="pinax-admin clone_project -l"
+alias pinclone="pinax-admin clone_project"
 
 # Make sure to install the virtualenvwrapper script.
 source /usr/local/bin/virtualenvwrapper.sh
