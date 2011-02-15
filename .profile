@@ -44,7 +44,7 @@ alias projects="ssh nrb@projects.crc.nd.edu"
 
 # Misc. aliases
 alias c="cd"
-alias m="mate"
+alias m="mvim"
 alias s="sudo"
 alias reload="source ~/.profile"
 
