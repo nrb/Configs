@@ -1,11 +1,8 @@
-" Tabs (for python)
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set softtabstop=4
-set autoindent
-set smartindent
+" Enable file type detection
+filetype plugin indent on
 
+" Autoindent all files.
+set autoindent
 " Appearance
 syntax on
 set background=dark
