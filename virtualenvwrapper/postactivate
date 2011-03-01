@@ -1,1 +1,4 @@
-/Users/nrb/dev/postactivate
+#!/bin/bash
+# This hook is run after every virtualenv is activated.
+
+cd $VIRTUAL_ENV
