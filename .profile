@@ -72,3 +72,8 @@ bind -m vi-insert "\C-l":clear-screen
 
 # Set the editor to vim (so we can be cross platform).
 EDITOR="vim"
+
+# JsTestDriver root directory.
+JSTESTDRIVER_HOME=~/bin
+
+export JSTESTDRIVER_HOME
