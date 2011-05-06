@@ -1,5 +1,5 @@
 # Update path.
-export PATH=/usr/local/lib/erlang/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=~/bin:~/Dropbox/bin:/usr/local/lib/erlang/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Get current git branch.
 function parse_git_branch {
