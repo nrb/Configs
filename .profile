@@ -77,3 +77,7 @@ EDITOR="vim"
 JSTESTDRIVER_HOME=~/bin
 
 export JSTESTDRIVER_HOME
+
+# Git configuration
+git config --global core.editor vim
+git config color.ui true
