@@ -19,6 +19,15 @@ function update-configs {
     git pull origin
 }
 
+function t() { 
+  TODO_CFG=~/Dropbox/todo/todo.cfg
+  if [ $# -eq 0 ]; then
+    todo.sh -d $TODO_CFG ls
+  else
+    todo.sh -d $TODO_CFG $* 
+  fi
+}
+
 
 # Set prompt.
 PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\! \[\e[1;37m\]➜\[\e[0m\] "
