@@ -89,4 +89,4 @@ export JSTESTDRIVER_HOME
 
 # Git configuration
 git config --global core.editor vim
-git config color.ui true
+git config --global color.ui true
