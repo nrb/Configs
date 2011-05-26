@@ -48,7 +48,7 @@ alias gi="git svn init -s"
 # SSH Aliases
 alias cigroup="ssh nolan@cigroup.crc.nd.edu"
 alias citeam="ssh nolan@citeam.crc.nd.edu"
-alias projects="ssh nrb@projects.crc.nd.edu"
+alias projects="ssh nbrubake@projects.crc.nd.edu"
 
 # Misc. aliases
 alias c="cd"
