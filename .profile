@@ -1,6 +1,9 @@
 # Update path.
 export PATH=~/bin:~/Dropbox/bin:/usr/local/lib/erlang/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+# Point wine to the correct folder for it's environment.
+export WINEPREFIX=$HOME/.games
+
 # Get current git branch.
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
