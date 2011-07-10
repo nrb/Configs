@@ -41,7 +41,7 @@ alias pushconfig="git push origin"
 # Git aliases
 alias gscl="git svn clone -s"
 alias gsdc="git svn dcommit"
-alias gc="git commit"
+alias gc="git commit -v"
 alias gcm="git commit -m"
 alias ga="git add"
 alias gst="git status"
@@ -93,3 +93,4 @@ export JSTESTDRIVER_HOME
 # Git configuration
 git config --global core.editor vim
 git config --global color.ui true
+git config --global merge.tool vimdiff
