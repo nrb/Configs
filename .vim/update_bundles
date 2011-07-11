@@ -3,21 +3,15 @@
 git_bundles = [ 
   "git://github.com/msanders/snipmate.vim.git",
   "git://github.com/scrooloose/nerdtree.git",
-  "git://github.com/timcharper/textile.vim.git",
   "git://github.com/tpope/vim-fugitive.git",
   "git://github.com/tpope/vim-git.git",
-  "git://github.com/tpope/vim-repeat.git",
-  "git://github.com/tpope/vim-surround.git",
-  "git://github.com/tpope/vim-vividchalk.git",
-  "git://github.com/tsaleh/vim-align.git",
-  "git://github.com/tsaleh/vim-supertab.git",
-  "git://github.com/tsaleh/vim-tcomment.git",
+  "git://github.com/vim-scripts/python.vim--Vasiliev.git",
 ]
 
 vim_org_scripts = [
-  ["IndexedSearch", "7062",  "plugin"],
-  ["gist",          "12732", "plugin"],
-  ["jquery",        "12107", "syntax"],
+#  ["IndexedSearch", "7062",  "plugin"],
+  ["jquery",        "2416", "syntax"],
+#  ["pyflakes",	    "2441",  "plugin"],
 ]
 
 require 'fileutils'

@@ -1,5 +1,10 @@
 " Enable file type detection
-filetype plugin indent on
+filetype on
+filetype plugin on
+filetype indent on
+
+" Set Python options
+au FileType python setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
 " Autoindent all files.
 set autoindent
