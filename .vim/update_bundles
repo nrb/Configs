@@ -6,6 +6,10 @@ git_bundles = [
   "git://github.com/tpope/vim-fugitive.git",
   "git://github.com/tpope/vim-git.git",
   "git://github.com/vim-scripts/python.vim--Vasiliev.git",
+  "git://github.com/tpope/vim-surround.git",
+  "git://github.com/itspriddle/vim-jquery.git",
+  "git://github.com/vim-scripts/pythoncomplete.git",
+  "git://github.com/vim-scripts/django.vim.git",
 ]
 
 vim_org_scripts = [
