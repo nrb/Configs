@@ -73,6 +73,8 @@ alias pinclone="pinax-admin clone_project"
 # Make sure to install the virtualenvwrapper script.
 source /usr/local/bin/virtualenvwrapper.sh
 
+source /Users/nrb/.pythonbrew/etc/bashrc
+
 # Set up the virtualenvwrapper project root.
 WORKON_HOME=~/dev
 
