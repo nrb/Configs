@@ -1,6 +1,3 @@
-filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
 " Enable file type detection
 filetype on
 filetype plugin on
@@ -23,4 +20,5 @@ set t_Co=256
 " Misc
 set number " Line numbers.
 
-
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
