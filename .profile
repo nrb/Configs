@@ -76,7 +76,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 source /Users/nrb/.pythonbrew/etc/bashrc
 
 # Set up the virtualenvwrapper project root.
-WORKON_HOME=~/dev
+WORKON_HOME=~/.envs
+
+PGDATA=/usr/local/var/postgres
 
 # Set command line input to vi mode.
 set -o vi
