@@ -80,6 +80,8 @@ WORKON_HOME=~/.envs
 
 export PGDATA=/usr/local/var/postgres
 
+export FLAVOR=dev
+
 # Set command line input to vi mode.
 set -o vi
 
