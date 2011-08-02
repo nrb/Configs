@@ -22,4 +22,8 @@ set t_Co=256
 " Misc
 set number " Line numbers.
 
+" Remove the GUI toolbar in MacVim.
+if has("gui_running")
+    set guioptions=egmrt
+endif
 
