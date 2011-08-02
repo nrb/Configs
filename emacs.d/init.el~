@@ -1,0 +1,36 @@
+(add-to-list 'load-path "~/.emacs.d/modes/")
+
+(require 'linum+)
+(require 'pymacs)
+
+(setenv "PYMACS_PYTHON" "~/.envs/emacs/bin/python")
+
+; Pymacs/Rope configuration
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+
+; Probably less necessary right now.
+; Don't need the refactoring as much as linting.
+;(setq pymacs-load-path
+;'("/Users/nrb/.envs/emacs/lib/python2.6/site-packages/rope",
+;"/Users/nrb/.envs/emacs/lib/python2.6/site-packages/ropemacs-0.6-py2.6.egg/ropemacs/"))
+;(ropemacs-mode)
+
+; Pyflakes/flymake integration
+; Taken from http://plope.com/Members/chrism/flymake-mode
+(when (load "flymake" t) (defun flymake-pyflakes-init () (let*
+       ((temp-file (flymake-init-create-temp-buffer-copy
+       'flymake-create-temp-inplace)) (local-file
+       (file-relative-name temp-file (file-name-directory
+       buffer-file-name)))) (list "pyflakes" (list local-file))))
+
+       (add-to-list 'flymake-allowed-file-name-masks '("\\.py\\'"
+		flymake-pyflakes-init)))
+
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+
+
+(global-linum-mode 1)
