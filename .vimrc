@@ -19,6 +19,9 @@ set background=dark
 colorscheme ir_black
 set t_Co=256
 
+" Make whitespace characters show up.
+set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+
 " Misc
 set number " Line numbers.
 
