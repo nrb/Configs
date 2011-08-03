@@ -3,6 +3,8 @@
 
 (require 'linum+)
 (require 'pymacs)
+(require 'git)
+
 (pymacs-load "ropemacs" "rope-")
 
 
