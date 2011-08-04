@@ -33,7 +33,7 @@ function t() {
 
 
 # Set prompt.
-PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\! \[\e[1;37m\]➜\[\e[0m\] "
+PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
 
 # Config management aliases
 alias pushconfig="git push origin"
