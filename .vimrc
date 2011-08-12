@@ -16,7 +16,7 @@ set autoindent
 " Appearance
 syntax on
 set background=dark
-colorscheme ir_black
+colorscheme Tomorrow
 set t_Co=256
 
 " Make whitespace characters show up.
