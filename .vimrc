@@ -28,8 +28,9 @@ set number " Line numbers.
 if has("gui_running")
     set guioptions=egmrt
     set background=light
+    colorscheme solarized
 else
     set background=dark
+    colorscheme ir_black
 endif
 
-colorscheme solarized
