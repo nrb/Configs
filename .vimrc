@@ -14,9 +14,8 @@ au BufWritePost *.py !pyflakes %
 " Autoindent all files.
 set autoindent
 " Appearance
-syntax on
-set background=dark
-colorscheme ir_black
+syntax enable
+" Set 256 colors.
 set t_Co=256
 
 " Make whitespace characters show up.
@@ -25,8 +24,15 @@ set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅,eol:¬
 " Misc
 set number " Line numbers.
 
-" Remove the GUI toolbar in MacVim.
 if has("gui_running")
+" Remove the GUI toolbar in MacVim.
     set guioptions=egmrt
+    " Use solarized when we're in MacVim.
+    set background=light
+    colorscheme solarized
+else
+    " Use ir_black on the terminal.
+    set background=dark
+    colorscheme ir_black
 endif
 

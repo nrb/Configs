@@ -13,6 +13,7 @@ git_bundles = [
   "git://github.com/motemen/git-vim.git",
   "git://github.com/kevinw/pyflakes-vim",
   "git://github.com/kevinw/pyflakes.git",
+  "git://github.com/altercation/vim-colors-solarized.git"
 ]
 
 vim_org_scripts = [
