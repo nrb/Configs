@@ -19,7 +19,7 @@ syntax enable
 set t_Co=256
 
 " Make whitespace characters show up.
-set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅,eol:¬
+set list listchars=tab:▷⋅,eol:¬
 
 " Misc
 set number " Line numbers.
