@@ -71,9 +71,15 @@ alias pinprojlist="pinax-admin clone_project -l"
 alias pinclone="pinax-admin clone_project"
 
 # Make sure to install the virtualenvwrapper script.
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]
+then
+	source /usr/local/bin/virtualenvwrapper.sh
+fi
 
-source /Users/nrb/.pythonbrew/etc/bashrc
+if [ -e  ~/.pythonbrew/etc/bashrc ]
+then
+	source ~/.pythonbrew/etc/bashrc
+fi
 
 # Set up the virtualenvwrapper project root.
 WORKON_HOME=~/.envs
