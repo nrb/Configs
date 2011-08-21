@@ -20,6 +20,9 @@ vim_org_scripts = [
 #  ["IndexedSearch", "7062",  "plugin"],
 #  ["jquery",        "2416", "syntax"],
 #  ["pyflakes",	    "2441",  "plugin"],
+   ["blackboard",    "11225", "colors"],
+   ["calmbreeze",    "16283", "colors"],
+   ["atom",          "15570", "colors"],
 ]
 
 require 'fileutils'

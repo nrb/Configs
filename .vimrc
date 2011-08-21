@@ -15,11 +15,11 @@ au BufWritePost *.py !pyflakes %
 set autoindent
 " Appearance
 syntax enable
-" Set 256 colors.
-set t_Co=256
+set cursorline " Hightlight the current line.
+
 
 " Make whitespace characters show up.
-set list listchars=tab:▷⋅,eol:¬
+set list listchars=tab:▷\ ,eol:¬
 
 " Misc
 set number " Line numbers.
@@ -28,11 +28,13 @@ if has("gui_running")
 " Remove the GUI toolbar in MacVim.
     set guioptions=egmrt
     " Use solarized when we're in MacVim.
-    set background=light
-    colorscheme solarized
+    colorscheme Tomorrow-Night
+    set background=dark
 else
     " Use ir_black on the terminal.
-    set background=dark
     colorscheme ir_black
+    set background=dark
+    " Set 256 colors.
+    set t_Co=256
 endif
 
