@@ -28,8 +28,8 @@ if has("gui_running")
 " Remove the GUI toolbar in MacVim.
     set guioptions=egmrt
     " Use solarized when we're in MacVim.
-    colorscheme Tomorrow-Night
     set background=dark
+    colorscheme atom
 else
     " Use ir_black on the terminal.
     colorscheme ir_black
