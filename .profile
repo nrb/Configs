@@ -70,6 +70,9 @@ alias dact="deactivate"
 alias pinprojlist="pinax-admin clone_project -l"
 alias pinclone="pinax-admin clone_project"
 
+# Django shortcuts
+alias drs="./manage.py runserver"
+
 # Make sure to install the virtualenvwrapper script.
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]
 then
