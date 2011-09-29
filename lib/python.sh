@@ -29,3 +29,6 @@ alias dact="deactivate"
 
 # Set up the virtualenvwrapper project root.
 WORKON_HOME=~/.envs
+
+# Set up the virtualenvwrapper hooks directory
+VIRTUALENVWRAPPER_HOOK_DIR=~/Configs/virtualenvwrapper

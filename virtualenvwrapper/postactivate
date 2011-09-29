@@ -1,4 +1,9 @@
 #!/bin/bash
 # This hook is run after every virtualenv is activated.
 
-cd $VIRTUAL_ENV
+export TARGET_DIR=`basename $VIRTUAL_ENV`
+
+if [ -d $DEV_DIR/$TARGET_DIR ]
+then
+    cd $DEV_DIR/$TARGET_DIR
+fi

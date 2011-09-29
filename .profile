@@ -63,6 +63,8 @@ export JSTESTDRIVER_HOME
 # Redis shortcuts
 alias startredis="redis-server /usr/local/etc/redis.conf"
 
+export DEV_DIR=~/dev
+
 # Import profile modules
 source ~/Configs/lib/git.sh
 source ~/Configs/lib/python.sh
