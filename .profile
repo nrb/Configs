@@ -73,6 +73,9 @@ alias pinclone="pinax-admin clone_project"
 # Django shortcuts
 alias drs="clear; ./manage.py runserver"
 
+# Redis shortcuts
+alias startredis="redis-server /usr/local/etc/redis.conf"
+
 # Make sure to install the virtualenvwrapper script.
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]
 then
