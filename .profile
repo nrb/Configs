@@ -45,11 +45,6 @@ function reload() {
 }
 
 
-# Set prompt.
-PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
-
-
-
 # SSH Aliases
 alias cigroup="ssh nolan@cigroup.crc.nd.edu"
 alias citeam="ssh nolan@citeam.crc.nd.edu"
@@ -86,3 +81,6 @@ export DEV_DIR=~/dev
 # Import profile modules
 source ~/Configs/lib/git.sh
 source ~/Configs/lib/python.sh
+
+# Set prompt.
+PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
