@@ -8,4 +8,8 @@ export TARGET_DIR=`basename $VIRTUAL_ENV`
 if [ -d $DEV_DIR/$TARGET_DIR -a -z "$no_cd" ]
 then
     cd $DEV_DIR/$TARGET_DIR
+elif [ -n "$no_cd" ]
+then
+    # Make sure we clear the no_cd var.
+    unset no_cd
 fi
