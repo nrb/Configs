@@ -1,7 +1,7 @@
 # Get current git branch.
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "("${ref#refs/heads/}")"
+  echo ${ref#refs/heads/}
 }
 
 # Config management aliases
@@ -21,3 +21,12 @@ alias gi="git svn init -s"
 git config --global core.editor vim
 git config --global color.ui true
 git config --global merge.tool vimdiff
+
+# Git functions
+
+function git_merge_to_master() {
+    # Retrieve the current git branch name, checkout master, and merge this one into it.
+    current_branch=$(parse_git_branch)
+    git checkout master
+    git merge $current_branch --no-ff
+}
