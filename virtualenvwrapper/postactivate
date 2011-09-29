@@ -3,7 +3,9 @@
 
 export TARGET_DIR=`basename $VIRTUAL_ENV`
 
-if [ -d $DEV_DIR/$TARGET_DIR ]
+# Only change directory if it exists, and the no_cd var isn't set.
+# no_cd generally gets set when reloading the bash profile.
+if [ -d $DEV_DIR/$TARGET_DIR -a -z "$no_cd" ]
 then
     cd $DEV_DIR/$TARGET_DIR
 fi
