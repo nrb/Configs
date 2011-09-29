@@ -4,12 +4,6 @@ export PATH=~/bin:~/Dropbox/bin:/usr/local/lib/erlang/bin:/usr/local/bin:/usr/lo
 # Point wine to the correct folder for it's environment.
 export WINEPREFIX=$HOME/.games
 
-# Get current git branch.
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "("${ref#refs/heads/}")"
-}
-
 # Do a find and replace for a particular string across files.
 function mutlireplace {
     # TODO: look up how to do bash args.
@@ -35,18 +29,7 @@ function t() {
 # Set prompt.
 PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
 
-# Config management aliases
-alias pushconfig="git push origin"
 
-# Git aliases
-alias gscl="git svn clone -s"
-alias gsdc="git svn dcommit"
-alias gc="git commit -v"
-alias gcm="git commit -m"
-alias ga="git add"
-alias gst="git status"
-alias gd="git diff"
-alias gi="git svn init -s"
 
 # SSH Aliases
 alias cigroup="ssh nolan@cigroup.crc.nd.edu"
@@ -59,39 +42,9 @@ alias m="mvim"
 alias s="sudo"
 alias reload="source ~/.profile"
 
-# Python aliases
-alias py="python"
-## Virtualenv aliases
-alias venv="virtualenv"
-alias venv-nsp="virtualenv --no-site-packages"
-alias act="source bin/activate"
-alias dact="deactivate"
-
-alias pinprojlist="pinax-admin clone_project -l"
-alias pinclone="pinax-admin clone_project"
-
-# Django shortcuts
-alias drs="clear; ./manage.py runserver"
-
-# Redis shortcuts
-alias startredis="redis-server /usr/local/etc/redis.conf"
-
-# Make sure to install the virtualenvwrapper script.
-if [ -e /usr/local/bin/virtualenvwrapper.sh ]
-then
-	source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-if [ -e  ~/.pythonbrew/etc/bashrc ]
-then
-	source ~/.pythonbrew/etc/bashrc
-fi
-
-# Set up the virtualenvwrapper project root.
-WORKON_HOME=~/.envs
-
 export PGDATA=/usr/local/var/postgres
 
+# Some clients use the flavor variable to say what environment a project is running in.
 export FLAVOR=dev
 
 # Set command line input to vi mode.
@@ -105,10 +58,11 @@ EDITOR="vim"
 
 # JsTestDriver root directory.
 JSTESTDRIVER_HOME=~/bin
-
 export JSTESTDRIVER_HOME
 
-# Git configuration
-git config --global core.editor vim
-git config --global color.ui true
-git config --global merge.tool vimdiff
+# Redis shortcuts
+alias startredis="redis-server /usr/local/etc/redis.conf"
+
+# Import profile modules
+source ~/Configs/lib/git.sh
+source ~/Configs/lib/python.sh
