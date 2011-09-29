@@ -25,6 +25,25 @@ function t() {
   fi
 }
 
+function reload() {
+  # Stash the name of the virtualenv we're working on if it exists.
+  if [ -n "$VIRTUAL_ENV" ]
+  then
+    working_on=`basename $VIRTUAL_ENV`
+  fi
+  
+  # Reload the profile
+  source ~/.profile
+  
+  # Reload the virtualenv, if there was one.
+  if [ -n "$working_on" ]
+  then
+    # Tell the postactivate script to not change directory back to the virtual_env
+    no_cd="true"
+    workon $working_on
+  fi
+}
+
 
 # Set prompt.
 PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
@@ -40,7 +59,6 @@ alias projects="ssh nbrubake@projects.crc.nd.edu"
 alias c="cd"
 alias m="mvim"
 alias s="sudo"
-alias reload="source ~/.profile"
 
 export PGDATA=/usr/local/var/postgres
 
