@@ -8,9 +8,6 @@ filetype indent on
 " Set Python indentation options
 au FileType python setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
-" Set pyflakes to run after saving a buffer.
-au BufWritePost *.py !pyflakes %
-
 " Autoindent all files.
 set autoindent
 " Appearance
