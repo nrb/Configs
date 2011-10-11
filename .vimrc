@@ -5,6 +5,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Enable spellchecking
+set spell spelllang=en_us
+
 " Set Python indentation options
 au FileType python setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
