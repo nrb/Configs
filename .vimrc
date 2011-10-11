@@ -8,11 +8,31 @@ filetype indent on
 " Enable spellchecking
 set spell spelllang=en_us
 
+" Set leader key.
+let mapleader = ","
+
+" Map a key for vsplit
+map <leader>s :vsplit<CR>
+
 " Set Python indentation options
 au FileType python setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
+au FileType html setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
+au FileType rst setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
+au FileType djangohtml setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
-" Set pyflakes to run after saving a buffer.
-au BufWritePost *.py !pyflakes %
+" Ruby indentation options
+au FileType ruby setl tabstop=2 shiftwidth=2 expandtab softtabstop=2
+
+" Make vagrant and guard files be recognized as ruby.
+au BufRead,BufNewFile Vagrantfile set ft=ruby
+au BufRead,BufNewFile Guardfile set ft=ruby
+
+" Javascript indentation
+au FileType javascript setl tabstop=2 shiftwidth=2 expandtab softtabstop=2
+
+" Global tab settings for:
+set ts=4 sts=4 sw=4 expandtab
+
 
 " Autoindent all files.
 set autoindent
@@ -30,9 +50,9 @@ set number " Line numbers.
 if has("gui_running")
 " Remove the GUI toolbar in MacVim.
     set guioptions=egmrt
-    " Use solarized when we're in MacVim.
+    colorscheme Tomorrow-Night
     set background=dark
-    colorscheme atom
+    set guifont=Ubuntu\ Mono:h14
 else
     " Use ir_black on the terminal.
     colorscheme ir_black
@@ -40,4 +60,6 @@ else
     " Set 256 colors.
     set t_Co=256
 endif
-
+" Status line fancies.
+set laststatus=2
+set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %Pe

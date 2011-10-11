@@ -1,4 +1,23 @@
 #!/bin/bash
 # This hook is run after every virtualenv is activated.
 
-cd $VIRTUAL_ENV
+export TARGET_DIR=`basename $VIRTUAL_ENV`
+
+# Only change directory if it exists, and the no_cd var isn't set.
+# no_cd generally gets set when reloading the bash profile.
+if [ -d $DEV_DIR/$TARGET_DIR -a -z "$no_cd" ]
+then
+    cd $DEV_DIR/$TARGET_DIR
+elif [ -n "$no_cd" ]
+then
+    # Make sure we clear the no_cd var.
+    unset no_cd
+fi
+
+# set up gem paths, in case we're using something like Foreman with the project
+export OLD_GEM_HOME=$GEM_HOME
+export GEM_HOME="$VIRTUAL_ENV/gems"
+export OLD_GEM_PATH=$GEM_PATH
+export GEM_PATH=""
+export PATH="$PATH:$GEM_HOME/bin"
+

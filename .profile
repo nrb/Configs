@@ -1,14 +1,8 @@
 # Update path.
-export PATH=~/bin:~/Dropbox/bin:/usr/local/lib/erlang/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=~/bin:~/.rvm/gems/ruby-1.9.2-p290/bin:~/Dropbox/bin:/usr/local/lib/erlang/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Point wine to the correct folder for it's environment.
 export WINEPREFIX=$HOME/.games
-
-# Get current git branch.
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "("${ref#refs/heads/}")"
-}
 
 # Do a find and replace for a particular string across files.
 function mutlireplace {
@@ -22,6 +16,33 @@ function update-configs {
     git pull origin
 }
 
+# Move to the project specified, or just go to the development dir.
+function d() {
+    if [ -d ~/dev/$1 ]; then
+        cd ~/dev/$1
+    else
+        cd ~/dev
+    fi
+}
+
+# Completion for projects in the ~/dev directory.
+_d() {
+    local cur prev opts base
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    local dirs=$(ls ~/dev);
+    COMPREPLY=( $(compgen -W "${dirs}" -- ${cur}) )
+    return 0
+}
+
+complete -F _d d
+
+function fuckitdude() {
+    echo "Let's go bowling."
+}
+
 function t() { 
   TODO_CFG=~/Dropbox/todo/todo.cfg
   if [ $# -eq 0 ]; then
@@ -31,61 +52,39 @@ function t() {
   fi
 }
 
+function reload() {
+  # Stash the name of the virtualenv we're working on if it exists.
+  if [ -n "$VIRTUAL_ENV" ]
+  then
+    working_on=`basename $VIRTUAL_ENV`
+  fi
+  
+  # Reload the profile
+  source ~/.profile
+  
+  # Reload the virtualenv, if there was one.
+  if [ -n "$working_on" ]
+  then
+    # Tell the postactivate script to not change directory back to the virtual_env
+    no_cd="true"
+    workon $working_on
+  fi
+}
 
-# Set prompt.
-PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
-
-# Config management aliases
-alias pushconfig="git push origin"
-
-# Git aliases
-alias gscl="git svn clone -s"
-alias gsdc="git svn dcommit"
-alias gc="git commit -v"
-alias gcm="git commit -m"
-alias ga="git add"
-alias gst="git status"
-alias gd="git diff"
-alias gi="git svn init -s"
-
-# SSH Aliases
-alias cigroup="ssh nolan@cigroup.crc.nd.edu"
-alias citeam="ssh nolan@citeam.crc.nd.edu"
-alias projects="ssh nbrubake@projects.crc.nd.edu"
 
 # Misc. aliases
 alias c="cd"
 alias m="mvim"
 alias s="sudo"
-alias reload="source ~/.profile"
+alias ls="ls -G" # With colors
+alias ll="ls -alh" # Long output with human readable sizes.
 
-# Python aliases
-alias py="python"
-## Virtualenv aliases
-alias venv="virtualenv"
-alias venv-nsp="virtualenv --no-site-packages"
-alias act="source bin/activate"
-alias dact="deactivate"
-
-alias pinprojlist="pinax-admin clone_project -l"
-alias pinclone="pinax-admin clone_project"
-
-# Make sure to install the virtualenvwrapper script.
-if [ -e /usr/local/bin/virtualenvwrapper.sh ]
-then
-	source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-if [ -e  ~/.pythonbrew/etc/bashrc ]
-then
-	source ~/.pythonbrew/etc/bashrc
-fi
-
-# Set up the virtualenvwrapper project root.
-WORKON_HOME=~/.envs
+# Recursively build tags for the current directory.
+alias mktags="/usr/local/bin/ctags -R *"
 
 export PGDATA=/usr/local/var/postgres
 
+# Some clients use the flavor variable to say what environment a project is running in.
 export FLAVOR=dev
 
 # Set command line input to vi mode.
@@ -99,10 +98,22 @@ EDITOR="vim"
 
 # JsTestDriver root directory.
 JSTESTDRIVER_HOME=~/bin
-
 export JSTESTDRIVER_HOME
 
-# Git configuration
-git config --global core.editor vim
-git config --global color.ui true
-git config --global merge.tool vimdiff
+# Redis shortcuts
+alias startredis="redis-server /usr/local/etc/redis.conf"
+
+export DEV_DIR=~/dev
+
+# bash-completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+source `brew --prefix`/etc/bash_completion
+fi
+
+# Import profile modules
+source ~/Configs/lib/git.sh
+source ~/Configs/lib/python.sh
+source ~/Configs/lib/ruby.sh
+
+# Set prompt.
+PS1="\[\e[1;31m\]\w\[\e[0m\]\[\e[1;32m\]\$(__git_ps1)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
