@@ -2,18 +2,16 @@
 
 git_bundles = [ 
   "git://github.com/msanders/snipmate.vim.git",
-  "git://github.com/scrooloose/nerdtree.git",
   "git://github.com/tpope/vim-fugitive.git",
-  "git://github.com/tpope/vim-git.git",
   "git://github.com/vim-scripts/python.vim--Vasiliev.git",
   "git://github.com/tpope/vim-surround.git",
-  "git://github.com/itspriddle/vim-jquery.git",
   "git://github.com/vim-scripts/pythoncomplete.git",
   "git://github.com/vim-scripts/django.vim.git",
   "git://github.com/motemen/git-vim.git",
   "git://github.com/kevinw/pyflakes-vim",
   "git://github.com/kevinw/pyflakes.git",
-  "git://github.com/altercation/vim-colors-solarized.git"
+  "git://github.com/altercation/vim-colors-solarized.git",
+  "https://github.com/vim-scripts/Command-T",
 ]
 
 vim_org_scripts = [
@@ -51,3 +49,6 @@ vim_org_scripts.each do |name, script_id, script_type|
   end
 end
 
+# Compile the Command-T C extension.
+FileUtils.cd("./Command-T/ruby/command-t")
+`ruby extconf.rb; make`

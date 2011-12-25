@@ -5,8 +5,18 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Set leader key.
+let mapleader = ","
+
 " Set Python indentation options
 au FileType python setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
+au FileType html setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
+au FileType rst setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
+au FileType djangohtml setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
+
+" Global tab settings for:
+set ts=4 sts=4 sw=4 expandtab
+
 
 " Autoindent all files.
 set autoindent
