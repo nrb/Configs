@@ -36,6 +36,7 @@ if has("gui_running")
     set guioptions=egmrt
     colorscheme Tomorrow-Night
     set background=dark
+    set guifont=Menlo\ Regular:h12
 else
     " Use ir_black on the terminal.
     colorscheme ir_black
