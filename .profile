@@ -50,6 +50,8 @@ alias c="cd"
 alias m="mvim"
 alias s="sudo"
 
+alias mktags="/usr/local/bin/ctags -R *"
+
 export PGDATA=/usr/local/var/postgres
 
 # Some clients use the flavor variable to say what environment a project is running in.
