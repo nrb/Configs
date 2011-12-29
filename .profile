@@ -1,5 +1,5 @@
 # Update path.
-export PATH=~/bin:~/Dropbox/bin:/usr/local/lib/erlang/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=~/bin:~/.rvm/gems/ruby-1.9.2-p290/bin:~/Dropbox/bin:/usr/local/lib/erlang/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Point wine to the correct folder for it's environment.
 export WINEPREFIX=$HOME/.games
@@ -76,6 +76,8 @@ export DEV_DIR=~/dev
 # Import profile modules
 source ~/Configs/lib/git.sh
 source ~/Configs/lib/python.sh
+
+[[ -s "/Users/nrb/.rvm/scripts/rvm" ]] && source "/Users/nrb/.rvm/scripts/rvm"
 
 # Set prompt.
 PS1="\[\e[1;31m\]\w\[\e[0m\] \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
