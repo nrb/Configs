@@ -50,6 +50,7 @@ alias c="cd"
 alias m="mvim"
 alias s="sudo"
 
+# Recursively build tags for the current directory.
 alias mktags="/usr/local/bin/ctags -R *"
 
 export PGDATA=/usr/local/var/postgres
@@ -82,6 +83,7 @@ source /usr/local/etc/bash_completion.d/git-completion.bash
 source ~/Configs/lib/git.sh
 source ~/Configs/lib/python.sh
 
+# Source the RVM script if it's present
 [[ -s "/Users/nrb/.rvm/scripts/rvm" ]] && source "/Users/nrb/.rvm/scripts/rvm"
 
 # Set prompt.
