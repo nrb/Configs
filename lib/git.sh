@@ -2,6 +2,7 @@
 alias pushconfig="git push origin"
 
 # Git aliases
+alias g="git"
 alias gscl="git svn clone -s"
 alias gsdc="git svn dcommit"
 alias gc="git commit -v"
