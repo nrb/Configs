@@ -16,6 +16,7 @@ alias gi="git svn init -s"
 git config --global core.editor vim
 git config --global color.ui true
 git config --global merge.tool vimdiff
+git config --global core.excludesfile ~/Configs/global.gitignore
 
 # Git functions
 
