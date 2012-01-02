@@ -14,6 +14,9 @@ au FileType html setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
 au FileType rst setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
 au FileType djangohtml setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
+" Ruby indentation options
+au FileType ruby setl tabstop=2 shiftwidth=2 expandtab softtabstop=2
+
 " Global tab settings for:
 set ts=4 sts=4 sw=4 expandtab
 
