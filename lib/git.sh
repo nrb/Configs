@@ -1,9 +1,3 @@
-# Get current git branch.
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
-}
-
 # Config management aliases
 alias pushconfig="git push origin"
 
