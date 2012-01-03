@@ -17,5 +17,5 @@ fi
 # set up gem paths, in case we're using something like Foreman with the project
 export GEM_HOME="$VIRTUAL_ENV/gems"
 export GEM_PATH=""
-export PATH=$PATH:$GEM_HOME/bin
+export PATH="$PATH:$GEM_HOME/bin"
 
