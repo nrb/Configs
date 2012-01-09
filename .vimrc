@@ -47,7 +47,3 @@ else
     " Set 256 colors.
     set t_Co=256
 endif
-
-" Ugly hack to keep whitespace-only lines indented.
-inoremap <CR> x<BS><CR>
-
