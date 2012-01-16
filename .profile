@@ -89,9 +89,7 @@ fi
 # Import profile modules
 source ~/Configs/lib/git.sh
 source ~/Configs/lib/python.sh
-
-# Source the RVM script if it's present
-[[ -s "/Users/nrb/.rvm/scripts/rvm" ]] && source "/Users/nrb/.rvm/scripts/rvm"
+source ~/Configs/lib/ruby.sh
 
 # Set prompt.
 PS1="\[\e[1;31m\]\w\[\e[0m\]\[\e[1;32m\]\$(__git_ps1)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
