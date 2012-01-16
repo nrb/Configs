@@ -49,7 +49,8 @@ function reload() {
 alias c="cd"
 alias m="mvim"
 alias s="sudo"
-alias ls="ls -p"
+alias ls="ls -G" # With colors
+alias ll="ls -alh" # Long output with human readable sizes.
 
 # Recursively build tags for the current directory.
 alias mktags="/usr/local/bin/ctags -R *"
