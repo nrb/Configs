@@ -81,6 +81,11 @@ export DEV_DIR=~/dev
 # Add git completion script.
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
+# bash-completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+source `brew --prefix`/etc/bash_completion
+fi
+
 # Import profile modules
 source ~/Configs/lib/git.sh
 source ~/Configs/lib/python.sh
