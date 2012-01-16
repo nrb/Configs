@@ -13,3 +13,11 @@ then
     # Make sure we clear the no_cd var.
     unset no_cd
 fi
+
+# set up gem paths, in case we're using something like Foreman with the project
+export OLD_GEM_HOME=$GEM_HOME
+export GEM_HOME="$VIRTUAL_ENV/gems"
+export OLD_GEM_PATH=$GEM_PATH
+export GEM_PATH=""
+export PATH="$PATH:$GEM_HOME/bin"
+

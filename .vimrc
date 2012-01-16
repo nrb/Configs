@@ -17,6 +17,10 @@ au FileType djangohtml setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
 " Ruby indentation options
 au FileType ruby setl tabstop=2 shiftwidth=2 expandtab softtabstop=2
 
+" Make vagrant and guard files be recognized as ruby.
+au BufRead,BufNewFile Vagrantfile set ft=ruby
+au BufRead,BufNewFile Guardfile set ft=ruby
+
 " Global tab settings for:
 set ts=4 sts=4 sw=4 expandtab
 
@@ -47,7 +51,3 @@ else
     " Set 256 colors.
     set t_Co=256
 endif
-
-" Ugly hack to keep whitespace-only lines indented.
-inoremap <CR> x<BS><CR>
-

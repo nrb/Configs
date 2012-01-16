@@ -1,2 +1,6 @@
+# vim temp files
 .*.swp
+# OS X resource cruft.
 .DS_Store
+# ctags files
+.tags
