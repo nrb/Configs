@@ -5,7 +5,6 @@ source /usr/local/etc/bash_completion.d/git-completion.bash
 alias pushconfig="git push origin"
 
 # Git aliases
-alias g="git"
 alias gscl="git svn clone -s"
 alias gsdc="git svn dcommit"
 alias gc="git commit -v"
@@ -29,3 +28,9 @@ function git_merge_to_master() {
     git checkout master
     git merge $current_branch --no-ff
 }
+
+function g() {
+    git "$@"
+}
+
+complete -F _git g
