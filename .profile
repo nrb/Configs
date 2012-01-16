@@ -16,6 +16,29 @@ function update-configs {
     git pull origin
 }
 
+# Move to the project specified, or just go to the development dir.
+function d() {
+    if [ -d ~/dev/$1 ]; then
+        cd ~/dev/$1
+    else
+        cd ~/dev
+    fi
+}
+
+# Completion for projects in the ~/dev directory.
+_d() {
+    local cur prev opts base
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    local dirs=$(ls ~/dev);
+    COMPREPLY=( $(compgen -W "${dirs}" -- ${cur}) )
+    return 0
+}
+
+complete -F _d d
+
 function t() { 
   TODO_CFG=~/Dropbox/todo/todo.cfg
   if [ $# -eq 0 ]; then
