@@ -1,3 +1,6 @@
+# Add git completion script.
+source /usr/local/etc/bash_completion.d/git-completion.bash
+
 # Config management aliases
 alias pushconfig="git push origin"
 
