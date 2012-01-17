@@ -39,6 +39,10 @@ _d() {
 
 complete -F _d d
 
+function fuckitdude() {
+    echo "Let's go bowling."
+}
+
 function t() { 
   TODO_CFG=~/Dropbox/todo/todo.cfg
   if [ $# -eq 0 ]; then
