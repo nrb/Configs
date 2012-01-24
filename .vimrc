@@ -21,6 +21,9 @@ au FileType ruby setl tabstop=2 shiftwidth=2 expandtab softtabstop=2
 au BufRead,BufNewFile Vagrantfile set ft=ruby
 au BufRead,BufNewFile Guardfile set ft=ruby
 
+" Javascript indentation
+au FileType javascript setl tabstop=2 shiftwidth=2 expandtab softtabstop=2
+
 " Global tab settings for:
 set ts=4 sts=4 sw=4 expandtab
 
