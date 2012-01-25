@@ -59,4 +59,4 @@ else
 endif
 " Status line fancies.
 set laststatus=2
-set statusline+=%{fugitive#statusline()}
+set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %Pe
