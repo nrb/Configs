@@ -57,3 +57,6 @@ else
     " Set 256 colors.
     set t_Co=256
 endif
+" Status line fancies.
+set laststatus=2
+set statusline+=%{fugitive#statusline()}
