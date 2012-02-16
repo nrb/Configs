@@ -1,0 +1,10 @@
+[core]
+	editor = vim
+	excludesfile = /Users/nrb/Configs/global.gitignore
+[color]
+	ui = true
+[merge]
+	tool = vimdiff
+[user]
+	email = nolan@nbrubaker.com
+	name = Nolan Brubaker
