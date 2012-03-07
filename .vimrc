@@ -8,9 +8,6 @@ filetype indent on
 " Set leader key.
 let mapleader = ","
 
-" Map a key for vsplit
-map <leader>s :vsplit<CR>
-
 " Set Python indentation options
 au FileType python setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
 au FileType html setl tabstop=4 shiftwidth=4 expandtab softtabstop=4
