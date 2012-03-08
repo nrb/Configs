@@ -5,6 +5,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Enable spellchecking
+set spell spelllang=en_us
+
 " Set leader key.
 let mapleader = ","
 
