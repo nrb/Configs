@@ -76,7 +76,7 @@ function reload() {
 alias c="cd"
 alias m="mvim"
 alias s="sudo"
-alias ls="ls -G" # With colors
+alias ls="ls -F" # With type symbols
 alias ll="ls -alh" # Long output with human readable sizes.
 
 # Recursively build tags for the current directory.
