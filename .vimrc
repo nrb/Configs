@@ -52,10 +52,10 @@ if has("gui_running")
     set guifont=Ubuntu\ Mono:h14
 else
     " Use ir_black on the terminal.
-    colorscheme ir_black
+    colorscheme solarized
     set background=dark
     " Set 256 colors.
-    set t_Co=256
+    " set t_Co=256
 endif
 " Status line fancies.
 set laststatus=2
