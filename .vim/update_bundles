@@ -11,6 +11,7 @@ git_bundles = [
   "git://github.com/altercation/vim-colors-solarized.git",
   "https://github.com/vim-scripts/Command-T",
   "https://github.com/int3/vim-extradite",
+  "https://github.com/kien/ctrlp.vim",
 ]
 
 vim_org_scripts = [
@@ -20,6 +21,7 @@ vim_org_scripts = [
    ["blackboard",    "11225", "colors"],
    ["calmbreeze",    "16283", "colors"],
    ["atom",          "15570", "colors"],
+   ["lucius",        "17668", "colors"],
 ]
 
 require 'fileutils'
