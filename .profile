@@ -116,4 +116,4 @@ source ~/Configs/lib/python.sh
 source ~/Configs/lib/ruby.sh
 
 # Set prompt.
-PS1="\[\e[1;31m\]\w\[\e[0m\]\[\e[1;32m\]\$(__git_ps1)\[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
+PS1="\[\e[1;31m\]\w\[\e[0m\]\[\e[1;32m\] $(vcprompt) \[\e[0m\] \n\[\e[1;37m\]➜\[\e[0m\] "
