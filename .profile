@@ -74,7 +74,7 @@ function reload() {
 
 # Misc. aliases
 alias c="cd"
-alias m="mvim"
+alias m="mvim -v"
 alias s="sudo"
 alias ls="ls -F" # With type symbols
 alias ll="ls -alh" # Long output with human readable sizes.
